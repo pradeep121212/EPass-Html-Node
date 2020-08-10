@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<%currentDoc =null%>
+
+<head>
+    <title>E-Pass Application</title>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand mr-auto" href="#"><a class="navbar-brand mr-auto" href="#">Welcome to TamilNadu
+                    E-Pass
+                    Portal</a>
+                <div class="collapse navbar-collapse" id="Navbar">
+                    <div class="col-12 col-sm-12"></div>
+
+                </div>
+        </div>
+    </nav>
+
+    <div class="row p-5 justify-content-center">
+        <div class="card w-100">
+
+            <h3 class="card-header bg-success text-white ">
+                <span class="row p-2 justify-content-center">
+                    Applied Passes
+                </span>
+            </h3>
+            <div class="card-body">
+                <dl class="">
+                    <%if(Object.keys(data).length==0){%>
+                    <h5 class="text-grey">
+                        <span class="row p-6 justify-content-center">
+                            No Passes Available
+                        </span>
+                    </h5>
+                    <%}else{%>
+                    <div class="table-responsive">
+                        <table class="table">
+
+                            <thead>
+                                <tr>
+
+                                    <th scope="col">Date Of Application</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">No. Of Passengers</th>
+                                    <th scope="col">From District</th>
+                                    <th scope="col">To District</th>
+                                    <th scope="col">Reason</th>
+                                    <th scope="col"></th>
+
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <%data.forEach((doc)=>{%>
+                                <tr>
+                                    <th><%=`${doc['createdAt']}`.substring(0,24)%></th>
+
+                                    <td><%=doc['status']%></td>
+                                    <td><%=doc['numberOfPassengers']%></td>
+                                    <td><%=doc['fromDistrict']%></td>
+                                    <td><%=doc['toDistrict']%></td>
+                                    <td><%=doc['reason']%></td>
+                                    <td>
+                                        <form action="" method="post">
+                                            <button class="btn bg-succes btn-lg" name="id"
+                                                value=<%=doc['_id']%>>View</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                <%})%>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <%}%>
+
+
+                </dl>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

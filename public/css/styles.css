@@ -1,0 +1,32 @@
+.navbar-dark{
+    background-color:#512DAB ;
+}
+    body { 
+        padding-top: 65px; 
+    }
+
+
+.row-header {
+    margin: 0px auto;
+    padding: 0px auto;
+
+}
+
+.row-content {
+    margin: 0px auto;
+    padding: 50px 0px 50px 0px;
+    border-bottom: 1px ridge;
+    min-height: 400px;
+
+}
+footer{
+    clear: both;
+    height: 50px;
+ 
+    text-align: center;
+    margin: 0px 0px 0px 0px;
+    font-weight: bold ;
+    font-size: 18px;
+    background-color: whitesmoke;
+    
+    }

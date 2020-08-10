@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<%const districts = [
+"Ariyalur",
+"Chengalpattu",
+"Chennai",
+"Coimbatore",
+"Cuddalore",
+"Dharmapuri",
+"Dindigul",
+"Erode",
+"Kallakurichi",
+"Kanchipuram",
+"Kanyakumari",
+"Karur",
+"Krishnagiri",
+"Madurai",
+"Nagapattinam",
+"Namakkal",
+"Nilgiris",
+"Perambalur",
+"Pudukkottai",
+"Ramanathapuram",
+"Ranipet",
+"Salem",
+"Sivaganga",
+"Tenkasi",
+"Thanjavur",
+"Theni",
+"Thoothukudi (Tuticorin)",
+"Tiruchirappalli",
+"Tirunelveli",
+"Tirupathur",
+"Tiruppur",
+"Tiruvallur",
+"Tiruvannamalai",
+"Tiruvarur",
+"Vellore",
+"Viluppuram",
+"Virudhunagar"
+                                                                            
+];%>
+
+<head>
+    <title>E-Pass Application</title>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand mr-auto" href="#"><a class="navbar-brand mr-auto" href="#"> TamilNadu E-Pass
+                    Portal</a>
+                <div class="collapse navbar-collapse" id="Navbar">
+                    <div class="col-12 col-sm-2"></div>
+                    <h1>Application Form</h1>
+                </div>
+        </div>
+    </nav>
+    <form name="formName" id="formName" method="POST">
+        <div class="col-12 col-sm-12 align-self-center">
+            <div class="card">
+                <div class="card-body">
+
+
+                    <div class="row justify-content-center">
+                        <h1> </h1>
+                    </div>
+                    <div class="form-group row justify-content-center">
+                        <div class="form-group col-12 col-sm-5">
+                            <div class="row  justify-content-center">
+                                <h3>Reason</h3>
+                            </div>
+                            <select type="text" class="form-control" name="reason" id="reason">
+                                <option value="Stranded in a new place">Stranded in a new place</option>
+                                <option value="Marriage">Marriage</option>
+                                <option value="Death">Death</option>
+                                <option value="Government Duty">Government Duty</option>
+
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="form-group row justify-content-center">
+                        <div class="form-group col-12 col-sm-4">
+                            <div class="row  justify-content-center">
+                                <h3>Your Address</h3>
+                            </div>
+                            <div class="form-group">
+
+                                <input type="address" class="form-control" name="fromAddress1" id="fromAddress1"
+                                    placeholder="Address Line 1" />
+                            </div>
+                            <div class="form-group">
+
+                                <input type="address" class="form-control" name="fromAddress2" id="fromAddress2"
+                                    placeholder="Address Line 2" />
+                            </div>
+                            <div class="form-group row justify-content-center">
+                                <label for="firstname" class="col-md-3 mt-2">
+                                    <h6>District</h6>
+                                </label>
+                                <div class="col-md-6">
+                                    <select class="form-control" name="fromDistrict" id="fromDistrict">
+
+                                        <%districts.forEach((dist)=>{%>
+                                        <option value=<%=dist%>><%=dist%></option>
+                                        <%});%>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-12 col-sm-4">
+                            <div class="row  justify-content-center">
+                                <h3>Destination Address</h3>
+                            </div>
+                            <div class="form-group">
+
+                                <input type="address" class="form-control" name="toAddress1" id="toAddress1"
+                                    placeholder="Address Line 1" />
+                            </div>
+                            <div class="form-group">
+
+                                <input type="address" class="form-control" name="toAddress2" id="toAddress2"
+                                    placeholder="Address Line 2" />
+                            </div>
+                            <div class="form-group row justify-content-center">
+                                <label for="firstname" class="col-md-3 mt-2">
+                                    <h6>District</h6>
+                                </label>
+                                <div class="col-md-6">
+                                    <select class="form-control" name="toDistrict" id="toDistrict">
+
+                                        <%districts.forEach((dist)=>{%>
+                                        <option value=<%=dist%>><%=dist%></option>
+                                        <%});%>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-group row justify-content-center">
+
+                    <div class="form-group col-12 col-sm-5">
+                        <div class="row justify-content-center">
+                            <h2>Vehicle Details</h2>
+                        </div>
+                        <div class="form-group row justify-content-center">
+                            <label for="firstname" class="col-md-3 mt-2">
+                                <h6>Vehicle Type</h6>
+                            </label>
+                            <div class="col-md-6">
+                                <select class="form-control" name="vehicle" id="vehicle">
+                                    <option value="1 Bike">Bike</option>
+                                    <option value="3 Car">Car</option>
+                                    <option value="5 Car-7-Seater">Car (7 seater)</option>
+                                    <option value="2 goods">Goods Vehicles</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row justify-content-center">
+                            <label for="firstname" class="col-md-3 mt-2">
+                                <h6>Vehicle Number</h6>
+                            </label>
+
+                            <input type="text" class="form-control col-md-6" id="vehicleNo" name="vehicleNo"
+                                placeholder="Vehicle No"></input>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-group row justify-content-center">
+
+                    <div class="form-group col-12 col-md-12">
+                        <div class="row justify-content-center">
+                            <h2>Passenger Details</h2>
+                        </div>
+                        <div id="passengerList">
+                            <div class="form-group row justify-content-center">
+                                <div class="col-12 col-sm-5 align-self-center">
+                                    <div class="card">
+                                        <div class="card-body">
+
+                                            <div class="row justify-content-center">
+                                                <h5 class="p-2 md-2">Passenger 1</h5>
+                                            </div>
+
+                                            <div class="form-group row justify-content-center">
+                                                <label for="firstname" class="col-md-3 mt-2">
+                                                    <h6>Name</h6>
+                                                </label>
+                                                <input type="name" class="form-control col-md-6" id="name1" name="name1"
+                                                    placeholder="Name"></input>
+                                            </div>
+
+                                            <div class="form-group row justify-content-center">
+                                                <label for="firstname" class="col-md-3 mt-2">
+                                                    <h6>Age</h6>
+                                                </label>
+                                                <input type="number" class="form-control col-md-6" id="age1" name="age1"
+                                                    placeholder="Age"></input>
+                                            </div>
+
+                                            <div class="form-group row justify-content-center">
+                                                <label for="firstname" class="col-md-3 mt-2">
+                                                    <h6>Aadhar No</h6>
+                                                </label>
+                                                <input type="number" class="form-control col-md-6" id="aadhar1"
+                                                    name="aadhar1" placeholder="Aadhar"></input>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+
+                <div class="row  justify-content-center p-3">
+                    <button type="submit" class="btn btn-primary btn-lg pl-2 pr-2">Submit</button>
+                </div>
+    </form>
+
+    </div>
+    </div>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="user.js"></script>
+    <script>
+        document.getElementById("vehicle").addEventListener('change', (event) => {
+            maxPassengers = parseInt($("#vehicle :selected").val().split(" ")[0]);
+
+            var markups = "";
+            for (var i = 0; i < maxPassengers; i++) {
+                markups +=
+                    `
+                    <div class="form-group row justify-content-center">
+                            <div class="col-12 col-sm-5 align-self-center">
+                                <div class="card">
+                                    <div class="card-body">
+
+                                        <div class="row justify-content-center">
+                                            <h5 class="p-2 md-2">Passenger ${i + 1}</h5>
+                                        </div>
+
+                                        <div class="form-group row justify-content-center">
+                                            <label for="firstname" class="col-md-3 mt-2">
+                                                <h6>Name</h6>
+                                            </label>
+                                            <input type="name" class="form-control col-md-6" id="name${i + 1}" name="name${i + 1}"
+                                                placeholder="Name"></input>
+                                        </div>
+
+                                        <div class="form-group row justify-content-center">
+                                            <label for="firstname" class="col-md-3 mt-2">
+                                                <h6>Age</h6>
+                                            </label>
+                                            <input type="number" class="form-control col-md-6" id="age${i + 1}" name="age${i + 1}"
+                                                placeholder="Age"></input>
+                                        </div>
+
+                                        <div class="form-group row justify-content-center">
+                                            <label for="firstname" class="col-md-3 mt-2">
+                                                <h6>Aadhar No</h6>
+                                            </label>
+                                            <input type="number" class="form-control col-md-6" id="aadhar${i + 1}" name="aadhar${i + 1}"
+                                                placeholder="Aadhar"></input>
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                   
+                    `;
+
+            }
+            document.getElementById('passengerList').innerHTML = markups;
+        });
+    </script>
+
+</body>
+
+</html>

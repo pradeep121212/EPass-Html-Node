@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<%const districts = [
+"Ariyalur",
+"Chengalpattu",
+"Chennai",
+"Coimbatore",
+"Cuddalore",
+"Dharmapuri",
+"Dindigul",
+"Erode",
+"Kallakurichi",
+"Kanchipuram",
+"Kanyakumari",
+"Karur",
+"Krishnagiri",
+"Madurai",
+"Nagapattinam",
+"Namakkal",
+"Nilgiris",
+"Perambalur",
+"Pudukkottai",
+"Ramanathapuram",
+"Ranipet",
+"Salem",
+"Sivaganga",
+"Tenkasi",
+"Thanjavur",
+"Theni",
+"Thoothukudi (Tuticorin)",
+"Tiruchirappalli",
+"Tirunelveli",
+"Tirupathur",
+"Tiruppur",
+"Tiruvallur",
+"Tiruvannamalai",
+"Tiruvarur",
+"Vellore",
+"Viluppuram",
+"Virudhunagar"
+                                                                            
+];%>
+
+<head>
+    <title>E-Pass Application</title>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand mr-auto" href="#"><a class="navbar-brand mr-auto" href="#"> TamilNadu E-Pass
+                    Portal</a>
+                <div class="collapse navbar-collapse" id="Navbar">
+                    <div class="col-12 col-sm-2"></div>
+                    <h5>Application Form</h5>
+                </div>
+        </div>
+    </nav>
+
+    <div class="col-12 col-sm-12 align-self-center">
+        <div class="card">
+            <div class="card-body">
+
+
+                <div class="row justify-content-center">
+                    <h1> </h1>
+                </div>
+                <div class="form-group row justify-content-center">
+                    <div class="form-group col-12 col-sm-5">
+                        <div class="row  justify-content-center">
+                            <h3>Reason</h3>
+                        </div>
+                        <div class="form-group row justify-content-center">
+                            <h5><%=data['reason']%></h5>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-group row justify-content-center">
+                    <div class="form-group col-12 col-sm-4">
+                        <div class="row  justify-content-center">
+                            <h3>From Address</h3>
+                        </div>
+                        <div class="form-group row justify-content-center">
+                            <div class="form-group">
+                                <span><%=data.fromAddressLine1%> </span>
+                            </div>
+                        </div>
+                        <div class="form-group row justify-content-center">
+                            <div class="form-group">
+
+                                <span><%=data.fromAddressLine2%></span>
+                            </div>
+                        </div>
+                        <div class="form-group row justify-content-center">
+
+                            <h5><%=data.fromDistrict%></h5>
+
+                        </div>
+                    </div>
+                    <div class="form-group col-12 col-sm-4">
+                        <div class="row  justify-content-center">
+                            <h3>To Address</h3>
+                        </div>
+                        <div class="form-group row justify-content-center">
+                            <div class="form-group">
+
+                                <span><%=data.toAddressLine1%> </span>
+                            </div>
+                        </div>
+                        <div class="form-group row justify-content-center">
+                            <div class="form-group">
+
+                                <span><%=data.toAddressLine2%> </span>
+                            </div>
+                        </div>
+                        <div class="form-group row justify-content-center">
+
+                            <h5><%=data.toDistrict%></h5>
+
+                        </div>
+                    </div>
+                    <div class="form-group col-12 col-sm-4">
+                        <div class="row  justify-content-center">
+                            <h3>Vehicle Details</h3>
+                        </div>
+                        <div class="form-group row justify-content-center">
+                            <div class="form-group mt-3">
+
+                                <h4><%=data.vehicleType%> </h4>
+                            </div>
+                        </div>
+                        <div class="form-group row justify-content-center">
+                            <div class="form-group">
+
+                                <span>(max passengers :<%=data.numberOfPassengers%>) </span>
+                            </div>
+                        </div>
+                        <div class="form-group row justify-content-center">
+
+                            <h5><%=data.vehicleNumber%></h5>
+
+                        </div>
+                    </div>
+
+                    <!-- 
+                        <div class="form-group row justify-content-center">
+
+                            <div class="form-group col-12 col-sm-3">
+                                <div class="row justify-content-center">
+                                    <h3>Vehicle Details</h3>
+                                </div>
+                                <div class="form-group row justify-content-center">
+                                    <label for="firstname" class="col-md-3 mt-2">
+                                        <h6>Vehicle Type</h6>
+                                    </label>
+
+                                    <div class="col-md-6">
+                                        <h5><%=data.vehicleType%></h5>
+                                    </div>
+
+                                </div>
+                                <div class="form-group row justify-content-center">
+                                    <label for="firstname" class="col-md-3 mt-2">
+                                        <h6>Vehicle Number</h6>
+                                    </label>
+                                    <div class="col-md-6">
+                                        <h5><%=data.vehicleNumber%></h5>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div> -->
+                </div>
+            </div>
+
+
+
+            <div class="form-group row justify-content-center">
+
+                <div class="form-group col-12 col-md-12">
+                    <div class="row justify-content-center">
+                        <h2>Passenger Details</h2>
+                    </div>
+                    <div id="passengerList">
+
+                        <div class="form-group row justify-content-center">
+                            <%for(var i=0;i<data.numberOfPassengers;i++){%>
+                            <div class="col-12 col-sm-3 p-3 align-self-center">
+
+                                <div class="card">
+                                    <div class="card-body">
+
+                                        <div class="row justify-content-center">
+                                            <h5 class="p-2 md-2">Passenger <%=i+1%></h5>
+                                        </div>
+
+                                        <div class="form-group row justify-content-center">
+                                            <label for="firstname" class="col-md-4 mt-2">
+                                                <h6>Name</h6>
+                                            </label>
+                                            <span type="name" class="col-md-6" id="name1" name="name1"
+                                                placeholder="Name"><%=data.passengers[i].name%></span>
+                                        </div>
+
+                                        <div class="form-group row justify-content-center">
+                                            <label for="firstname" class="col-md-4 mt-2">
+                                                <h6>Age</h6>
+                                            </label>
+                                            <span type="name" class="col-md-6" id="name1" name="name1"
+                                                placeholder="Name"><%=data.passengers[i].age%></span>
+                                        </div>
+
+                                        <div class="form-group row justify-content-center">
+                                            <label for="firstname" class="col-md-4 mt-2">
+                                                <h6>Aadhar No</h6>
+                                            </label>
+                                            <span type="name" class="col-md-6" id="name1" name="name1"
+                                                placeholder="Name"><%=data.passengers[i].aadhar%></span>
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <%}%>
+
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+
+                <div class="row  justify-content-center p-3">
+                    <form method="POST" >
+                        <input type="hidden" name="id" value=<%=data.id%> />
+                            <div class="p-3">
+                                <button type="submit" name="assign" value="approved"
+                                    class="btn btn-primary btn-lg pl-2 pr-2 bg-success">
+                                    <div class="p-3">Approve</div>
+                                </button>
+                            </div>
+                            </form>
+                            <form method="POST" action="/admin">
+                                <input type="hidden" name="id" value=<%=data.id%> />
+                                <div class="p-3">
+                                    <button type="submit" name="assign" value="rejected"
+                                        class="btn btn-primary btn-lg pl-2 pr-2 bg-danger">
+                                        <div class="p-3">Reject</div>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+                integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                crossorigin="anonymous"></script>
+            <script src="user.js"></script>
+
+
+</body>
+
+</html>
